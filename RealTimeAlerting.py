@@ -4,7 +4,14 @@ try:
 
     f = open("TestCases.txt")
 
+except:
+    print("File can not be opened")
+try:
+
     data = f.readlines()
+
+except:
+    print("File can not be read")
 
     #data = input("Enter in this format (SERVER_ID, CPU_UTILIZATION, MEMORY_UTILIZATION, DISK_UTILIZATION): ") 
 
@@ -13,7 +20,7 @@ try:
 
     #if not type(data) is str:
         #raise TypeError("Only strings are allowed")
-
+try:
     # Splitting string into numbers and converting into integers
     for x in data:
         seperate = x.split()
@@ -53,7 +60,6 @@ try:
             flag3 = True
             numVilations += 1
 
-
         if (numVilations == 1 and flag1 == True):
             output = "(Alert " + serverid  + ', ' + "CPU_UTILIZATION VIOLATED" + ')'
 
@@ -82,11 +88,12 @@ try:
             output = "Error"
 
         print(output)
-
 except:
-    print("Invalid data entered")
+    print("Output printing failed")
 
 
+
+    
 
 
 
